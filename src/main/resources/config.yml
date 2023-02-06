@@ -1,0 +1,17 @@
+# 是否在控制台打印信息
+info: true
+# 是否在控制台打印警告
+warning: true
+# 自动删除的文件夹
+# 谨慎使用，删除的文件无法恢复
+rmdir:
+  - demo_world
+# 压缩包必须是这个格式(即根目录下是世界文件夹)
+# └── map1 (世界名，需要配置到rmdir中)
+#     ├── data
+#     ├── level.dat
+#     ├── level.dat_mcr
+# ......
+# 字段里填写文件名
+files:
+  - world.zip

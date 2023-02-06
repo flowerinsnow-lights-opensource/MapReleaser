@@ -1,0 +1,4 @@
+main: online.flowerinsnow.mapreleaser.MapReleaser
+name: MapReleaser
+version: ${project.version}
+author: flowerinsnow
