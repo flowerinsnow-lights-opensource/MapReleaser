@@ -24,12 +24,18 @@ public class MapReleaser extends JavaPlugin {
         saveDefaultConfig();
         reloadConfig();
 
+        if (!getConfig().getBoolean("enabled")) {
+            getLogger().info("由于未在配置文件中将enabled设为true，所以插件暂未启用");
+            setEnabled(false);
+            return;
+        }
+
         File worldContainer = Bukkit.getWorldContainer();
         List<String> rmdir = getConfig().getStringList("rmdir");
         rmdir.forEach(dir -> {
             File f = new File(worldContainer, dir);
             if (!f.exists()) {
-                if (isConfigTrue("info")) {
+                if (isConfigTrue("warning")) {
                     getLogger().info(dir + " 不是文件或文件夹，已跳过");
                 }
                 return;
